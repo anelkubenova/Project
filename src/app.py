@@ -3,8 +3,14 @@ from dash.dependencies import Input, Output, State
 from datetime import datetime
 import yfinance as yf
 import pandas as pd
+import dash_auth
+
+
+USERNAME_PASSWORD_PAIRS=[['anelkubenova', 'anelk3009'], ['A', 'K']]
 
 app = Dash(__name__)
+dash_auth.BasicAuth(app, USERNAME_PASSWORD_PAIRS)
+
 
 server = app.server
 
